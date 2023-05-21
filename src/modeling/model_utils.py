@@ -429,7 +429,7 @@ class AdvTorchModelHandler(TorchModelHandler):
         start_time = time.time()
         print(len(self.dataloader))
         for i_batch, sample_batched in enumerate(self.dataloader):
-            print("Batch {} in epoch {} -".format(i_batch, self.epoch))
+            #print("Batch {} in epoch {} -".format(i_batch, self.epoch))
             # zero gradients before EVERY optimizer step
             self.model.zero_grad()
 
@@ -449,12 +449,12 @@ class AdvTorchModelHandler(TorchModelHandler):
             # graph_loss_all.backward(retain_graph=self.loss_function.use_adv) # NOT on adv. params
             self.optimizer.step()
 
-            print("Main loss", graph_loss_all.item())
+            #print("Main loss", graph_loss_all.item())
 
             self.model.zero_grad()
             # if self.loss_function.use_adv:
             if True:  # self.loss_function.use_adv: - always do this, train adversary a bit first on it's own
-                print("Adv loss", graph_loss_adv.item())
+                #print("Adv loss", graph_loss_adv.item())
                 graph_loss_adv.backward()
                 self.adv_optimizer.step()
                 # only on adv params
