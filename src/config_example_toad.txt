@@ -25,4 +25,3 @@ h:113
 l2_main:0.0
 l2_adv:0.0
 semi_sup:True
-
