@@ -5,7 +5,7 @@ vec_name:glove.twitter.27B.100d
 vec_dim:100
 enc:bicond
 num_top:6
-epochs:150
+epochs:100
 b:64
 max_tok_len:20
 max_top_len:6
